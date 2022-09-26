@@ -2,13 +2,8 @@
 #ifndef _DISCIPLINA_H
 #define _DISCIPLINA_H
 
-#include "aluno.h"
-#include "departamento.h"
-#include "universidade.h"
-
-#include <stdio.h>
-#include <stdlib.h>
 #include <iostream>
+using namespace std;
 
 class Departamento;
 class Universidade;
@@ -26,12 +21,12 @@ private:
 
 public:
 
-    Disciplina(int newId=0, char* n="", Departamento* departamento=NULL);
+    Disciplina(int newId, const char* n, Departamento* departamento);
     ~Disciplina();
-    void inicializa(int newId=0, char* n="", Departamento* departamento=NULL);
+    void inicializa(int newId, const char* n, Departamento* departamento);
     
-    void setNome(char* n);
-    char* getNome();
+    void setNome(const char* n);
+    const char* getNome();
     
     void setId(int newId);
     int getId();

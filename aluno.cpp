@@ -1,7 +1,9 @@
 #include "aluno.h"
+#include <iostream>
+using namespace std;
 
-Aluno::Aluno ( int ra, int diaNA, int mesNA, char* nomeP):
-Pessoa ( diaNa, mesNa, anoNa, nomeP)
+Aluno::Aluno ( int ra, int diaNA, int mesNA, int anoNA, const char* nomeP):
+Pessoa ( diaNA, mesNA, anoNA, nomeP)
 {
     RA= ra;
     pUnivEstuda=NULL;
@@ -17,7 +19,8 @@ Aluno::~Aluno (){
 void Aluno::setunivEstuda(Universidade* pUniversidade){
     pUnivEstuda = pUniversidade;
 }
-Universidade* Aluno::getUnivEStuda(){
+Universidade* Aluno::getUnivEstuda(){
+    
     return (pUnivEstuda);
 }
 void Aluno::setRA(int ra){

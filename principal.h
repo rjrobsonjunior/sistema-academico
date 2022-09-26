@@ -1,10 +1,6 @@
 #ifndef _PRINCIPAL_H_
 #define _PRINCIPAL_H_
 
-# include <time.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <iostream>
 
 #include "pessoa.h"
 #include "universidade.h"
@@ -29,6 +25,9 @@ private:
     Departamento MatematicaUTFPR;
     Departamento MatematicaPrinceton;
     Departamento EletonicaCambridge;
+    
+    Aluno Robson;
+    Aluno Murilo;
 
     int diaAtual;
     int mesAtual;

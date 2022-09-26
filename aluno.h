@@ -1,10 +1,9 @@
 #ifndef _ALUNO_H_
 #define _ALUNO_H_
-#include "pessoa.h"
 
-#include <stdlib.h>
-#include <iostream>
-using namespace std;
+#include "pessoa.h"
+#include "universidade.h"
+
 
 class Aluno : public Pessoa
 {
@@ -13,12 +12,12 @@ private:
     Universidade* pUnivEstuda;
    
 public:
-    Aluno( int ra, int diaNa, int mesNa, int anoNa, char* nome = "" );
+    Aluno( int ra, int diaNa, int mesNa, int anoNa, const char* nomeP);
     Aluno ();
     ~Aluno ( );
 
     void setunivEstuda(Universidade* pUniversidade);
-    Universidade* getUnivEStuda();
+    Universidade* getUnivEstuda();
     void printOndeEstuda();
     void setRA ( int ra );
     int getRA ( );

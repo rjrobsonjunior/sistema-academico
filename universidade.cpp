@@ -1,15 +1,20 @@
 #include "universidade.h"
+#include <string.h>
+#include <iostream>
+using namespace std;
 
-Universidade::Universidade(char* nome=""){
+Universidade::Universidade(const char* nome){
     setNome(nome);
-
     int size = (int) ListaDep.size();
     for(int i = 0; i < size; i++)
         ListaDep[i] = NULL;
 }
 Universidade::Universidade ( )
 {
-
+    int size = (int) ListaDep.size();
+    for(int i = 0; i < size; i++)
+        ListaDep[i] = NULL;
+   
 }
 Universidade::~Universidade ( )
 {
@@ -17,7 +22,6 @@ Universidade::~Universidade ( )
 Departamento* Universidade::getDepartamentoById(int ID)
 {
     int size = (int) ListaDep.size();
-
     for(int i = 0; i < size; i++)
     {
         if( (ListaDep[i])->getId() == ID)
@@ -31,13 +35,13 @@ char* Universidade::getNome ( )
 {
     return nomeU;
 }
-void Universidade::setNome ( char* nome )
+void Universidade::setNome ( const char* nome )
 {
     strcpy(nomeU, nome );
 }
-void Universidade::setDepartamento ( Departamento* pdep , int ctd )
+void Universidade::setDepartamento ( Departamento* Pdep )
 {
-    ListaDep.push_back(pDep);
+   ListaDep.push_back(Pdep);
 }
 void Universidade::imprimeDptos ( ){
 

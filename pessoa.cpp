@@ -1,15 +1,20 @@
 #include "pessoa.h"
 
-Pessoa::Pessoa ( int diaNa, int mesNa, int anoNa, char* nome = " " ){
+#include <string.h>
+#include <iostream>
+using namespace std;
+
+
+Pessoa::Pessoa ( int diaNa, int mesNa, int anoNa, const char* nome ){
     Inicializa(diaNa, mesNa, anoNa, nome);
 }
-Pessoa::Pessoa ( ){
+Pessoa::Pessoa (){
     Inicializa(0, 0, 0, "");
 }
 Pessoa::~Pessoa ( ) { 
 
 }
-void Pessoa::Inicializa (int diaNa, int mesNa, int anoNa, char* nome = " " ){
+void Pessoa::Inicializa (int diaNa, int mesNa, int anoNa, const char* nome ){
     diaP = diaNa;
     mesP = mesNa;
     anoP = anoNa;
@@ -33,4 +38,8 @@ void Pessoa::printIdade(int diaAt, int mesAt, int anoAt)
     Calc_Idade(diaAt, mesAt, anoAt);
 
      cout << "A idade da Pessoa " << nomeP << " seria" << idadeP << endl;
+}
+int Pessoa::getIdade()
+{
+    return idadeP;
 }

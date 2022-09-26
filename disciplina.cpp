@@ -3,7 +3,9 @@
 #include "departamento.h"
 #include "universidade.h"
 
-Disciplina::Disciplina(int newId, char* n, Departamento* departamento)
+#include <cstring>
+
+Disciplina::Disciplina(int newId, const char* n, Departamento* departamento)
 {
     inicializa(newId, n, departamento);
 }
@@ -13,20 +15,20 @@ Disciplina::~Disciplina()
 
 }
 
-void Disciplina::inicializa(int newId, char* n, Departamento* departamento)
+void Disciplina::inicializa(int newId, const  char* n, Departamento* departamento)
 {
     id = newId;
-    strcpy(nomeDis, n);
+    strcpy (nomeDis, n);
     pDepartamento = departamento;
     pProx = NULL;
 }
 
-void Disciplina::setNome(char* n)
+void Disciplina::setNome(const char* n)
 {
     strcpy(nomeDis, n);
 }
 
-char* Disciplina::getNome()
+const char* Disciplina::getNome()
 {
     return (nomeDis);
 }

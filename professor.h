@@ -1,9 +1,10 @@
 #ifndef _PROFESSOR_H
 #define _PROFESSOR_H
 
-#include <stdio.h>
+
 #include <stdlib.h>
 #include <iostream>
+using namespace std;
 
 #include "pessoa.h"
 #include "universidade.h"
@@ -17,7 +18,7 @@ private:
     Departamento* pDptFiliado;
 
 public:
-    Professor ( int diaNa, int mesNa, int anoNa, char* nome = "" );
+    Professor ( int diaNa, int mesNa, int anoNa, const char* nome );
     Professor ( );
     ~Professor ( );
     

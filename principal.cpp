@@ -1,4 +1,5 @@
 #include "principal.h"
+#include <time.h>
 
 Principal::Principal (){ 
     //atribui valores para as variaveis da data
@@ -10,7 +11,9 @@ Principal::Principal (){
     diaAtual = local->tm_mday;
     mesAtual = local->tm_mon + 1;
     anoAtual = local->tm_year + 1900;
-
+    // Inicialização alunos
+    Murilo.Inicializa(29, 1, 2004,"Murilo");
+    Robson.Inicializa(1, 1, 2001, "Robson");
     //Registro dos Professores
     Simao.Inicializa(3, 10, 1976, "Jean Simão");
     Barreto.Inicializa(14, 3, 1969, "Rafael Barreto");
@@ -27,7 +30,7 @@ Principal::Principal (){
     // Registro dos departamentos
     DAINF.inicializa("DAINF", 123, &UTFPR);
     DAEL.inicializa("DAEL", 125, &UTFPR);
-    EletonicaCambridge.inicializa("Eletronica Cambridge", 12, &Cambridge);
+    EletonicaCambridge.inicializa("Eletronica Cambridge", 124, &Cambridge);
     // "Agregação" dos Departamentos das Univesidades.
     UTFPR.setDepartamento ( &DAEL );
     UTFPR.setDepartamento ( &DAINF );
@@ -43,6 +46,9 @@ Principal::Principal (){
     Simao.setDepartamento (&DAEL);
     Barreto.setDepartamento (&MatematicaPrinceton);
     Bogdan.setDepartamento (&EletonicaCambridge);
+    //associação aluno professor
+    Murilo.setunivEstuda(&UTFPR);
+    Robson.setunivEstuda(&UTFPR);
 }
 Principal:: ~Principal(){
     
